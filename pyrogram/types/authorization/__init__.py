@@ -26,6 +26,7 @@ from .firebase_authentication_settings import (
 from .phone_number_authentication_settings import PhoneNumberAuthenticationSettings
 from .sent_code import SentCode
 from .terms_of_service import TermsOfService
+from .session import Session
 
 __all__ = [
     "ActiveSession",
@@ -36,4 +37,5 @@ __all__ = [
     "PhoneNumberAuthenticationSettings",
     "SentCode",
     "TermsOfService",
+    "Session",
 ]
