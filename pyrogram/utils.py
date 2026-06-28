@@ -37,6 +37,14 @@ from pyrogram.file_id import DOCUMENT_TYPES, PHOTO_TYPES, FileId, FileType
 from pyrogram.types.messages_and_media.message import Str
 
 
+PyromodConfig = SimpleNamespace(
+    timeout_handler=None,
+    stopped_handler=None,
+    throw_exceptions=True,
+    unallowed_click_alert=True,
+    unallowed_click_alert_text=("[pyromod] You're not expected to click this button."),
+)
+
 def get_event_loop() -> asyncio.AbstractEventLoop:
     try:
         loop = asyncio.get_event_loop()
