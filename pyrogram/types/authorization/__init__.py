@@ -17,7 +17,6 @@
 #  along with Pyrogram.  If not, see <http://www.gnu.org/licenses/>.
 
 from .session import Session
-from .active_sessions import ActiveSessions
 from .firebase_authentication_settings import (
     FirebaseAuthenticationSettings,
     FirebaseAuthenticationSettingsAndroid,
