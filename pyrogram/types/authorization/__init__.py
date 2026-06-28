@@ -16,7 +16,7 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with Pyrogram.  If not, see <http://www.gnu.org/licenses/>.
 
-from .active_session import Session
+from .session import Session
 from .active_sessions import ActiveSessions
 from .firebase_authentication_settings import (
     FirebaseAuthenticationSettings,
@@ -29,7 +29,6 @@ from .terms_of_service import TermsOfService
 
 __all__ = [
     "Session",
-    "ActiveSessions",
     "FirebaseAuthenticationSettings",
     "FirebaseAuthenticationSettingsAndroid",
     "FirebaseAuthenticationSettingsIos",
