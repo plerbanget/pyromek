@@ -30,6 +30,7 @@ from datetime import datetime, timedelta, timezone
 from getpass import getpass
 from io import BytesIO
 from typing import Dict, List, Optional, Union
+from types import SimpleNamespace
 
 import pyrogram
 from pyrogram import enums, raw, types
