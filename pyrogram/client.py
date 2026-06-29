@@ -56,7 +56,7 @@ from pyrogram.handlers.handler import Handler
 from pyrogram.methods import Methods
 from pyrogram.qrlogin import QRLogin
 from pyrogram.session import Auth, Session
-from pyrogram.storage import FileStorage, MemoryStorage, SQLiteStorage, Storage
+from pyrogram.storage import FileStorage, MemoryStorage
 from pyrogram.types.pyromod import ListenerTypes
 from pyrogram.types import User, TermsOfService, Message, CallbackQuery
 from pyrogram.utils import ainput
