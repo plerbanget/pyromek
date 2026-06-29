@@ -25,44 +25,50 @@ import platform
 import re
 import shutil
 import sys
+import time
 from concurrent.futures.thread import ThreadPoolExecutor
 from datetime import datetime, timedelta
 from hashlib import sha256
 from importlib import import_module
-from io import StringIO, BytesIO
+from io import BytesIO, StringIO
 from mimetypes import MimeTypes
 from pathlib import Path
-from typing import Union, List, Optional, Callable, AsyncGenerator
+from typing import AsyncGenerator, Callable, List, Optional, Type, Union
 
-import builtins
 import pyrogram
-from pyrogram import __version__, __license__
-from .formatter import Formatter as fmt
-from pyrogram import enums
-from pyrogram import raw
-from pyrogram import utils
+from pyrogram import __license__, __version__, enums, raw, utils
 from pyrogram.crypto import aes
-from pyrogram.errors import CDNFileHashMismatch
 from pyrogram.errors import (
+    AuthBytesInvalid,
+    BadRequest,
+    CDNFileHashMismatch,
+    ChannelPrivate,
+    FloodPremiumWait,
+    FloodWait,
+    PersistentTimestampInvalid,
+    PersistentTimestampOutdated,
     SessionPasswordNeeded,
-    VolumeLocNotFound, ChannelPrivate,
-    BadRequest, AuthBytesInvalid, PersistentTimestampOutdated
+    Unauthorized,
+    VolumeLocNotFound,
+    AuthTokenExpired
 )
-from .connection import Connection
-from .connection.transport import TCP, TCPAbridged
 from pyrogram.handlers.handler import Handler
 from pyrogram.methods import Methods
+from pyrogram.qrlogin import QRLogin
 from pyrogram.session import Auth, Session
-from pyrogram.storage import FileStorage, MemoryStorage
-from pyrogram.types import User, TermsOfService, Message, CallbackQuery
+from pyrogram.storage import SQLiteStorage, Storage
 from pyrogram.types.pyromod import ListenerTypes
-from typing import Optional, Union    
+from pyrogram.types import User, TermsOfService, Message, CallbackQuery
 from pyrogram.utils import ainput
+
+from .connection import Connection
+from .connection.transport import TCP, TCPAbridged
 from .dispatcher import Dispatcher
 from .file_id import FileId, FileType, ThumbnailSource
 from .mime_types import mime_types
 from .parser import Parser
 from .session.internals import MsgId
+from .formatter import Formatter as fmt
 
 log = logging.getLogger(__name__)
 
