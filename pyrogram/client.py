@@ -238,8 +238,8 @@ class Client(Methods):
         sleep_threshold: int = Session.SLEEP_THRESHOLD,
         hide_password: bool = False,
         max_concurrent_transmissions: int = MAX_CONCURRENT_TRANSMISSIONS,
-        connection_factory: builtins.type[Connection] = Connection,
-        protocol_factory: builtins.type[TCP] = TCPAbridged,
+        connection_factory: Type[Connection] = Connection,
+        protocol_factory: Type[TCP] = TCPAbridged,
         message_cache_size: int = 1000,
     ):
         super().__init__()
